@@ -23,4 +23,6 @@ class Answer(models.Model):
     points = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.text} (+{self.points})"
+        answers = self.question.answers.order_by('id')
+        index = list(answers).index(self) + 1
+        return f"Question {self.question.id} - Answer {index}"
