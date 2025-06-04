@@ -8,10 +8,22 @@
     <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
 </head>
 <body>
-
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light fw-bold ms-3 ms-md-5"style="font-size: 40px" href="#">Good Habits Quiz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        </div>
+    </div>
+</nav>
 
 {% block content %}
 {% endblock %}
+<footer class="text-center bg-secondary py-3 mt-auto">
+    <h4 class="text-dark mb-0">Good Habits 2025</h4>
+</footer>
 
 
 </body>
