@@ -17,7 +17,7 @@
                             <div class="mt-3">
                                 {% for answer in question.answers.all %}
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio"
+                                        <input class="form-check-input border-secondary" type="radio"
                                                name="question_{{ question.id }}"
                                                value="{{ answer.id }}"
                                                id="answer_{{ answer.id }}" required>

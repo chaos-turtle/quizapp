@@ -27,4 +27,27 @@ def quiz(request):
 
 def result(request):
     total_points = request.session.get('quiz_points', 0)
-    return render(request, 'result.html', {'app_name': 'Quiz App', 'total_points': total_points})
+
+    quiz_obj = Quiz.objects.first()
+    max_points = 0
+    for question in quiz_obj.questions.all():
+        max_points += max(answer.points for answer in question.answers.all())
+
+    percentage = (total_points / max_points * 100) if max_points > 0 else 0
+
+    if percentage >= 75:
+        message = "You have very healthy habits!"
+    elif percentage >= 50:
+        message = "There's some room for improvement in your habits."
+    else:
+        message = "Consider making some changes to improve your daily habits."
+
+    context = {
+        'app_name': 'Quiz App',
+        'total_points': total_points,
+        'max_points': max_points,
+        'percentage': round(percentage, 1),
+        'message': message
+    }
+
+    return render(request, 'result.html', context)

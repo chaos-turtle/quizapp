@@ -2,16 +2,28 @@
 {% load static %}
 {% block content %}
 
-<div class="container py-5 text-center">
-    <h1 class="mb-4">Quiz Results</h1>
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-title">Your Score: {{ total_points }}</h2>
-            <p class="mt-4">
-                <a href="{% url 'default' %}" class="btn btn-primary">Back to Home</a>
-            </p>
+    <div class="container py-5 text-center">
+        <h1 class="mb-4">Quiz Results</h1>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Your Score: {{ total_points }}/{{ max_points }} ({{ percentage }}%)</h2>
+                <div class="progress mt-3 mx-auto" style="max-width: 300px;">
+                    <div class="progress-bar {% if percentage >= 75 %}bg-success
+                                       {% elif percentage >= 50 %}bg-warning
+                                       {% else %}bg-danger{% endif %}"
+                         role="progressbar"
+                         style="width: {{ percentage }}%"
+                         aria-valuenow="{{ percentage }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                    </div>
+                </div>
+                <p class="mt-4 h5">{{ message }}</p>
+                <p class="mt-4">
+                    <a href="{% url 'default' %}" class="btn btn-primary">Back to Home</a>
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

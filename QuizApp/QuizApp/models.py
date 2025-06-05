@@ -25,4 +25,4 @@ class Answer(models.Model):
     def __str__(self):
         answers = self.question.answers.order_by('id')
         index = list(answers).index(self) + 1
-        return f"Question {self.question.id} - Answer {index}"
+        return f"Answer {index}"
