@@ -25,4 +25,5 @@ urlpatterns = [
     path('index/', appViews.index, name='index'),
     path('', appViews.index, name='default'),
     path('quiz/', appViews.quiz, name='quiz'),
+    path('result/', appViews.result, name='result')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

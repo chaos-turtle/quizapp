@@ -2,6 +2,16 @@
 {% load static %}
 {% block content %}
 
-
+<div class="container py-5 text-center">
+    <h1 class="mb-4">Quiz Results</h1>
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Your Score: {{ total_points }}</h2>
+            <p class="mt-4">
+                <a href="{% url 'default' %}" class="btn btn-primary">Back to Home</a>
+            </p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
