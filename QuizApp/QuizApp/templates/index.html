@@ -2,19 +2,31 @@
 {% load static %}
 {% block content %}
 
-<div class="main-content d-flex flex-column justify-content-center align-items-center bg-primary text-center py-5">
-    <h1 class="display-4 text-dark fw-bold mb-3">The Power of Good Habits</h1>
-    <p class="h3 text-secondary fw-bold mb-4">Introducing the good habits of happiness</p>
-    <div class="text-dark bg-primary px-3 px-md-5" style="max-width: 900px;">
-        <p class="lead fw-bold" style="font-size: 23px;">
-            Check Your Habits – Are You Living a Healthy Life?<br>
-            Our daily habits shape our health, mood, and long-term goals.<br>
-            Before making any changes, it’s important to ask yourself:<br>
-            What are my habits like right now?
-        </p>
-        <p class="lead mb-4">Check quiz</p>
-        <button type="submit" class="btn btn-warning btn-lg">Start Quiz</button>
+    <div class="main-content d-flex flex-column justify-content-center align-items-center text-center py-5"
+         style="background-image: url('media/background.jpg');
+                 background-size: cover;
+                 background-position: center;
+                 background-repeat: no-repeat;
+                 min-height: 100vh;">
+        <div class="w-100 h-100 bg-white opacity-50 position-absolute z-1"></div>
+        <div class="z-2">
+            <h1 class="display-5 fw-bold mb-3">The Power of Good Habits</h1>
+            <div class="mt-3 d-flex flex-column">
+                <p class="fw-bold" style="font-size: 22px">
+                    Are You Living a Healthy Life?
+                </p>
+                <p class="fw-bold" style="font-size: 18px">
+                    Our daily habits shape our health, mood, and long-term wellbeing.<br>
+                    Before making any changes to your lifestyle, it’s important to ask yourself:<br>
+                    What are my habits like right now?
+                </p>
+                <hr class="border-2 opacity-75">
+                <div>
+                    <p style="font-size: 18px">Take this quiz to find out now!</p>
+                    <a href="{% url 'quiz' %}" type="submit" class="btn btn-primary btn-lg">Start Quiz</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 {% endblock %}
